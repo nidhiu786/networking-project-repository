@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>textured_green</title>
+  <meta name="description" content="website description">
+  <meta name="keywords" content="website keywords, website keywords">
+  <style>
+      table, th, td {
+  border: 1px solid black;
+}
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: #4CAF50;}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" title="style">
+</head>
+
+<body backgroundcolor="grey";>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1 style="background-color:rgb(30, 255, 199);"><b><I><marquee direction="left" height="50" width="600" backgroundcolor="pink";>Welcome To Nidhi's Webpage</marquee>
+          </div></I></b><span class="logo_colour"></span></a></h1>
+          <h2></h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="introduction.html"><p style="color:black"><b>Introduction</b></p></a></li>
+          <li><a href="skillset.html"><p style="color:black"><b>Skillset</b></p></a></li>
+          <li><a href="education.html"><p style="color:black"><b>Education</b></p></a></li>
+          <li><a href="project.html"><p style="color:black"><b>Projects</b></p></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+      
+      </div>
+      <div id="content">
+       
+        <h3>Projects</h3>
+          <table style="width:100%">
+            <!-- <thead> -->
+              <tr>
+                <th>Id</th>
+                <th>Project Title</th>
+                <th>Tools and Technology</th>
+                <th>Project Description</th>
+                <th>#</th>
+              </tr>
+            <!-- </thead> -->
+            <!-- {% for data in projects %} -->
+            <!-- <tbody> -->
+              <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.project_title}}</td>
+                <td>{{data.tools_technology}}</td>
+                <td>{{data.project_descr}}</td>
+                <td><a href="/delete/{{data.id}}" type="button">Delete</a></td>
+            <!-- </tbody> -->
+            </tr>
+            <!-- {% endfor%} -->
+          </table>
+          
+         <!-- <center> <button class="button button1">Add New Project</button></center> -->
+         <center><a href="/add_data"><button class="button button1"> Add New Project</button></a></center>
+         <!-- <center><a href="/sample.html"><button class="button button1"> Add New Project</button></a></center> -->
+
+
+      </div>
+    </div><br><br><br>
+    <div id="footer">
+
+        <p class="p1" style="color:black">Copyright � Nidhi's Webpage |  
+          <a href="https://www.w3schools.com/html/" style="color:black">HTML |</a>
+          <a href="https://www.w3schools.com/css/" style="color:black">CSS</a> | 
+          <a href="http://www.html5webtemplates.co.uk/" style="color:black">design from HTML5web.com</a>
+        </p>
+
+
+    </div>
+  </div>
+
+
+</body></html>
