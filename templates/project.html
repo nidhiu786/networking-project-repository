@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>textured_green</title>
+  <meta name="description" content="website description">
+  <meta name="keywords" content="website keywords, website keywords">
+  <style>
+      table, th, td {
+  border: 1px solid black;
+}
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: #4CAF50;}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" title="style">
+</head>
+
+<body backgroundcolor="grey";>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1 style="background-color:rgb(30, 255, 199);"><b><I><marquee direction="left" height="50" width="600" backgroundcolor="pink";>Welcome To Nidhi's Webpage</marquee>
+          </div></I></b><span class="logo_colour"></span></a></h1>
+          <h2></h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="introduction.html"><p style="color:black"><b>Introduction</b></p></a></li>
+          <li><a href="skillset.html"><p style="color:black"><b>Skillset</b></p></a></li>
+          <li><a href="education.html"><p style="color:black"><b>Education</b></p></a></li>
+          <li class="selected"><a href="project.html"><p style="color:black"><b>Projects</b></p></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <!--<h3>Latest News</h3>
+        <h4>New Website Launched</h4>
+        <h5>September 1st, 2013</h5>
+        <p>2013 sees the redesign of our website. Take a look around and let us know what you think.<br><a href="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#">Read more</a></p>
+        <p></p>
+        <h4>New Website Launched</h4>
+        <h5>September 1st, 2013</h5>
+        <p>2013 sees the redesign of our website. Take a look around and let us know what you think.<br><a href="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#">Read more</a></p>
+        <!--<h3>Useful Links</h3>-->
+        <!--<ul>
+          <li><a href="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#">link 1</a></li>
+          <li><a href="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#">link 2</a></li>
+          <li><a href="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#">link 3</a></li>
+          <li><a href="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#">link 4</a></li>
+        </ul>-->
+       <!--<h3>Search</h3>
+        <form method="post" action="https://www.html5webtemplates.co.uk/wp-content/uploads/2020/templates/textured_green/index.html#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords.....">
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="./textured_green_files/search.png" alt="Search" title="Search">
+          </p>
+        </form>-->
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <!-- <table>
+            <tr>
+            <th>Sr.No</th>
+              <th>Project Title</th>
+              <th>Tools & Technologies</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>1</td>
+                <td>Hostel Management System</td>
+              <td>HTML, CSS, JavaScript, Bootstrap</td>
+              <td>Created Application that helps hostel students to post their complains regarding hostel premises.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Canal Edge Detection Using Drone</td>
+              <td>Java, Docker, Bootstrap, Angular JS, IOT, MySql</td>
+              <td>Using drone based images we used to analye canal craks and defects. With the help of docker we used extract images.</td>
+            </tr>
+          </table> -->
+
+          <h3>Projects</h3>
+          <!-- <a href="/add_data">ADD</a> -->
+          <br>
+          <table>
+            <thead>
+                <th>Id</th>
+                <th>Project Title</th>
+                <th>Tools and Technology</th>
+                <th>Project Description</th>
+                <th>#</th>
+            </thead>
+            {% for data in projects %}
+            <tbody>
+                <td>{{data.id}}</td>
+                <td>{{data.project_title}}</td>
+                <td>{{data.tools_technology}}</td>
+                <td>{{data.project_descr}}</td>
+                <td><a href="/delete/{{data.id}}" type="button">Delete</a></td>
+            </tbody>
+            {% endfor%}
+          </table>
+          
+         <!-- <center> <button class="button button1">Add New Project</button></center> -->
+         <center><a href="/add_data"><button class="button button1"> Add New Project</button></a></center>
+
+      </div>
+    </div><br><br><br><br><br><br><br>
+    <div id="footer">
+
+        <p class="p1" style="color:black">Copyright � Nidhi's Webpage |  
+          <a href="https://www.w3schools.com/html/" style="color:black">HTML |</a>
+          <a href="https://www.w3schools.com/css/" style="color:black">CSS</a> | 
+          <a href="http://www.html5webtemplates.co.uk/" style="color:black">design from HTML5web.com</a>
+        </p>
+
+
+
+    <!-- <p class="p1" style="color:black">Copyright � Nidhi's Webpage |</p> <a href="http://validator.w3.org/check?uri=referer"></a><p style="color:black">HTML5 |</p> <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk/">design from HTML5web.com</a></p> -->
+    </div>
+  </div>
+
+
+</body></html>

@@ -39,11 +39,34 @@ db.session.commit()
 
  
 # function to render index page
+# @app.route('/')
+# def index():
+#     projects = Project.query.all()
+#     # print(projects)
+#     return render_template('index.html', projects=projects)
+
+# function to render introduction page 
 @app.route('/')
-def index():
+@app.route('/introduction.html')
+def introduction():
+    return render_template('introduction.html')
+
+# function to render skillset page 
+@app.route('/skillset.html')
+def skillset():
+    return render_template('skillset.html')   
+
+# function to render education page 
+@app.route('/education.html')
+def education():
+    return render_template('education.html')  
+
+# function to render education page 
+@app.route('/project.html')
+def project():
+    # return render_template('project.html')
     projects = Project.query.all()
-    print(projects)
-    return render_template('index.html', projects=projects)
+    return render_template('project.html', projects=projects)
 
 # function to render add_projects page 
 @app.route('/add_data')
@@ -67,9 +90,9 @@ def Projects():
         p = Project(project_title=project_title,tools_technology=tools_technology, project_descr=project_descr)
         db.session.add(p)
         db.session.commit()
-        return redirect('/')
+        return redirect('/project.html')
     else:
-        return redirect('/')
+        return redirect('/project.html')
  
 @app.route('/delete/<int:id>')
 def erase(id):
@@ -79,7 +102,7 @@ def erase(id):
     data = Project.query.get(id)
     db.session.delete(data)
     db.session.commit()
-    return redirect('/')
+    return redirect('/project.html')
  
 if __name__ == '__main__':
     # db.create_all()
